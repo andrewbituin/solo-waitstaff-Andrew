@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    text-align: center;
+}
+
+body{
+    margin: auto;
+    width: 75%;
+}
+
+#meal-details{
+    /* display: inline-block; */
+    height: 400px;
+    width: 400px;
+    border: 2px solid lightgray;
+    text-align: center;
+    margin: auto;
+    
+}
+
+.meal-details-form{
+    margin-bottom: 10px;
+    margin-left: 15px;
+    text-align: left;
+
+}
+
+
+#customer-charges{
+   /* display: inline-block; */
+   height: 400px;
+   width: 400px;
+   border: 2px solid lightgray;
+   text-align: center;
+   margin: auto;
+   
+}
+
+
+#my-earnings-info{
+   /* display: inline-block; */
+   height: 400px;
+   width: 400px;
+   border: 2px solid lightgray;
+   text-align: center;
+   margin: auto;
+   
+}
