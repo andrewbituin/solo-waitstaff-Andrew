@@ -27,7 +27,18 @@ function renderWaitstaffCalculator(){
 	calculateTip(tip, subtotal);
 
     const tipTotal = parseFloat(STORE.items[4].tip);
-	STORE.items[5].total = tipTotal + subtotal;
+    STORE.items[5].total = tipTotal + subtotal;
+    const total = STORE.items[5].total;
+    $('.js-customer-charges-values').html(generateCustomerChargesHTML(subtotal, tipTotal, total));
+    // generateHTML function for the customer charges values
+}
+
+function generateCustomerChargesHTML(subtotal, tip, total){
+    return `
+        <li>Subtotal: $${subtotal}</li>
+        <li>Tip: $${tip}</li>
+        <li>Total: $${total}</li>
+    `;
 }
 
 function calculateTotal(tipTotal, subtotalAmount){
@@ -68,7 +79,7 @@ function handleValueSubmit(){
 
 function calculateSubtotal(base, taxRate){
 
-	let tax = base / taxRate;
+	let tax = base * (taxRate / 100);
 	let total = base + tax;
 	total = total.toFixed(2);
 	STORE.items[3].subtotal = total;
