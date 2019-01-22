@@ -19,6 +19,7 @@ body{
     border: 2px solid lightgray;
     text-align: center;
     margin: auto;
+    margin-bottom: 10px;
     
 }
 
@@ -37,7 +38,7 @@ body{
    border: 2px solid lightgray;
    text-align: center;
    margin: auto;
-   
+   margin-bottom: 10px;
 }
 
 
@@ -48,5 +49,6 @@ body{
    border: 2px solid lightgray;
    text-align: center;
    margin: auto;
+   margin-bottom: 10px;
    
 }
