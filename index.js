@@ -13,7 +13,10 @@ const STORE =  {
 		{tipPercentage: 0},
 		{subtotal: 0},
 		{tip: 0},
-		{total: 0}
+		{total: 0},
+		{tipTotal: 0},
+		{mealCount: 1},
+		{avgTip: 0}
 	]
 };
 
@@ -28,9 +31,27 @@ function renderWaitstaffCalculator(){
 
     const tipTotal = parseFloat(STORE.items[4].tip);
     STORE.items[5].total = tipTotal + subtotal;
-    const total = STORE.items[5].total;
+	const total = STORE.items[5].total;
+	const totalTip = STORE.items[6].tipTotal;
+	const newTotalTip = tipTotal + totalTip;
+	STORE.items[6].tipTotal = newTotalTip;
+	let mealCount = STORE.items[7].mealCount;
+	mealCount++;
+	const averageTip = STORE.items[6].tipTotal / STORE.items[7].mealCount;
+
     $('.js-customer-charges-values').html(generateCustomerChargesHTML(subtotal, tipTotal, total));
-    // generateHTML function for the customer charges values
+	// generateHTML function for the customer charges values
+	
+	$('.js-my-earnings-info').html(generatemyEarningsInfoHTML(newTotalTip, mealCount, averageTip));
+}
+
+function generatemyEarningsInfoHTML(newTipTotal, mealCount, avgTip){
+	console.log('My earnings working');
+	return `
+		<li>Tip Total: $${newTipTotal}</>
+        <li>Meal Count: ${mealCount - 1}</li>
+        <li>Avg Tip Per Meal: $${avgTip}</li>
+	`;
 }
 
 function generateCustomerChargesHTML(subtotal, tip, total){
